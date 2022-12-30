@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-@Component
 public class StudentService {
 
     @Autowired
@@ -21,8 +20,8 @@ public class StudentService {
         studentRepository.addTeacher(teacher);
     }
 
-    public void createTeacherStudentMap(String teacher,String student){
-        studentRepository.saveTeacherStudentPair(teacher,student);
+    public void createTeacherStudentMap(String student,String teacher){
+        studentRepository.saveTeacherStudentPair(student,teacher);
     }
     public Student findStudent(String student){
        return studentRepository.findStudentByName(student);

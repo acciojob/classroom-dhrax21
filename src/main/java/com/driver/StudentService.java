@@ -46,6 +46,4 @@ public class StudentService {
         studentRepository.deleteAllTeacher();
     }
 
-
-
 }

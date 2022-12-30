@@ -65,10 +65,11 @@ public class StudentRepository {
             studentListOfTeacher=studentTeacherMap.get(teacherName);
 
             for(String student : studentListOfTeacher){
-                if(studentMap.containsKey(student)){
+                if(studentMap.containsKey(student)){            // deleting all students from a that teachers list
                     studentMap.remove(student);
                 }
             }
+            teacherMap.remove(teacherName);
             studentTeacherMap.remove(teacherName);
         }
     }
@@ -77,7 +78,7 @@ public class StudentRepository {
         HashSet<String> studentSet=new HashSet<String>();
 
         for(String teacher : studentTeacherMap.keySet()){
-            for(String student : studentTeacherMap.keySet()){
+            for(String student : studentTeacherMap.get(teacher)){
                 studentSet.add(student);
             }
         }
